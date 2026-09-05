@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JyLS Treasures - E-Commerce Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #9b7fb8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        /* Hero Section with Navigation */
+        .hero {
+            background: linear-gradient(135deg, #9b7fb8 0%, #8b6fa8 100%);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Billboard Banner */
+        .billboard {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .billboard img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Left Side - Main Content */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .about-section .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .about-section .logo-container img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-section h1 {
+            color: #9b7fb8;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Right Sidebar - Blog Posts */
+        .sidebar {
+            width: 350px;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        .blog-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-box h2 {
+            color: #9b7fb8;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #9b7fb8;
+            padding-bottom: 10px;
+        }
+
+        .blog-post {
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .blog-post:last-child {
+            border-bottom: none;
+        }
+
+        .blog-post:hover {
+            padding-left: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .blog-post h3 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .blog-post h3:hover {
+            color: #9b7fb8;
+        }
+
+        .blog-post .date {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .blog-post .excerpt {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .blog-post a {
+            color: #9b7fb8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .blog-post a:hover {
+            text-decoration: underline;
+        }
+
+        /* Scrollbar styling for sidebar */
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #9b7fb8;
+            border-radius: 10px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #8b6fa8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+
+            .hero-nav {
+                gap: 15px;
+            }
+
+            .hero-nav a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-nav a {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .about-section {
+                padding: 25px;
+            }
+
+            .about-section h1 {
+                font-size: 24px;
+            }
+
+            .about-section .logo-container img {
+                max-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Navigation -->
+    <div class="hero">
+        <div class="hero-nav">
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#cart">Cart</a>
+        </div>
+
+        <!-- Billboard Banner -->
+        <div class="billboard">
+            <img src="https://via.placeholder.com/1000x300/9b7fb8/FFFFFF?text=START+SHOPPING+-+JyLS+Treasures" alt="JyLS Treasures Billboard">
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Side - About Section -->
+        <div class="main-content">
+            <section class="about-section" id="about">
+                <div class="logo-container">
+                    <img src="https://via.placeholder.com/200x200/1a1a1a/FFFFFF?text=JyLS+Logo" alt="JyLS Treasures Logo">
+                </div>
+                <h1>JyLS Treasures</h1>
+                <p>
+                    Welcome to JyLS Treasures, your ultimate destination for trendy fashion and lifestyle items! 
+                    Founded in 2024, we pride ourselves on curating the finest collection of unique treasures that 
+                    reflect your personal style. From fashionable apparel and accessories to exclusive lifestyle products, 
+                    we handpick every item to ensure quality and authenticity.
+                </p>
+                <br>
+                <p>
+                    Our mission is to bring joy and confidence to every customer by offering exceptional products at 
+                    competitive prices. Whether you're looking for the latest fashion trends, vintage finds, or lifestyle 
+                    essentials, JyLS Treasures is your one-stop shop for all your needs. Join our community of satisfied 
+                    customers and discover why we're the trusted choice for quality and style.
+                </p>
+            </section>
+        </div>
+
+        <!-- Right Sidebar - Recent Blog Posts (Sticky) -->
+        <aside class="sidebar">
+            <div class="blog-box">
+                <h2>Recent Posts</h2>
+
+                <article class="blog-post">
+                    <div class="date">September 4, 2024</div>
+                    <h3>Fall Fashion Trends You Need to Know</h3>
+                    <p class="excerpt">Discover the hottest fall fashion trends that are taking over this season. From oversized blazers to cozy knitwear...</p>
+                    <a href="#post1">Read More →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="date">September 2, 2024</div>
+                    <h3>5 Wardrobe Essentials for Every Season</h3>
+                    <p class="excerpt">Build the perfect wardrobe with these 5 timeless essentials that work year-round. Quality pieces that never go out of style...</p>
+                    <a href="#post2">Read More →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="date">August 31, 2024</div>
+                    <h3>Sustainable Fashion: Making a Difference</h3>
+                    <p class="excerpt">Learn how our sustainable fashion choices are helping the environment and supporting ethical manufacturing practices...</p>
+                    <a href="#post3">Read More →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="date">August 28, 2024</div>
+                    <h3>New Collection Launch - Summer to Fall</h3>
+                    <p class="excerpt">Introducing our latest collection featuring transitional pieces perfect for the changing seasons. Limited stock available now...</p>
+                    <a href="#post4">Read More →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="date">August 25, 2024</div>
+                    <h3>Styling Tips: How to Layer Like a Pro</h3>
+                    <p class="excerpt">Master the art of layering with our expert tips and tricks. Create versatile looks that work for any occasion...</p>
+                    <a href="#post5">Read More →</a>
+                </article>
+
+                <article class="blog-post">
+                    <div class="date">August 22, 2024</div>
+                    <h3>Customer Spotlight: Your Style Inspiration</h3>
+                    <p class="excerpt">Featuring our amazing customers and how they style their favorite JyLS Treasures pieces. Be inspired and share your looks...</p>
+                    <a href="#post6">Read More →</a>
+                </article>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
