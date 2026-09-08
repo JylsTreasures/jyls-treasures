@@ -94,6 +94,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
+            position: relative;
         }
 
         .about-section .logo-container {
@@ -116,11 +117,33 @@
             text-align: left;
         }
 
+        .about-section h2 {
+            color: #9b7fb8;
+            font-size: 28px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
         .about-section p {
             font-size: 16px;
             line-height: 1.8;
             color: #555;
             text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .signature-container {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            text-align: right;
+        }
+
+        .signature-container img {
+            max-width: 120px;
+            height: auto;
+            margin-top: 10px;
         }
 
         .about-section::after {
@@ -245,6 +268,12 @@
             .hero-nav a {
                 font-size: 16px;
             }
+
+            .signature-container {
+                position: static;
+                margin-top: 20px;
+                text-align: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -279,6 +308,12 @@
 
             .about-section .logo-container img {
                 max-width: 150px;
+            }
+
+            .signature-container {
+                position: static;
+                margin-top: 20px;
+                text-align: center;
             }
         }
     </style>
@@ -315,13 +350,36 @@
                     reflect your personal style. From fashionable apparel and accessories to exclusive lifestyle products, 
                     we handpick every item to ensure quality and authenticity.
                 </p>
-                <br>
                 <p>
                     Our mission is to bring joy and confidence to every customer by offering exceptional products at 
                     competitive prices. Whether you're looking for the latest fashion trends, vintage finds, or lifestyle 
                     essentials, JYLs Treasures is your one-stop shop for all your needs. Join our community of satisfied 
                     customers and discover why we're the trusted choice for quality and style.
                 </p>
+
+                <h2>What Sets Us Apart</h2>
+                <p>
+                    What truly sets JYLs Treasures apart is our unwavering commitment to excellence at every step of the 
+                    customer journey. We understand that proper packaging is crucial to preserving the integrity of our items, 
+                    which is why we carefully box all shipments rather than relying on standard poly mailers. This extra care 
+                    ensures your treasures arrive in pristine condition, protected throughout the shipping process.
+                </p>
+                <p>
+                    Additionally, we meticulously inspect and accurately list every piece of clothing, providing detailed 
+                    descriptions that reflect exactly what you'll receive. This dedication to transparency significantly reduces 
+                    returns and guarantees that each customer receives precisely what they expect.
+                </p>
+                <p>
+                    Operating from our dedicated warehouse allows us to maintain remarkable efficiency—most orders ship within 
+                    one business day, with many items going out the same day they're ordered. This combination of careful packaging, 
+                    honest product descriptions, and lightning-fast fulfillment is what makes shopping with JYLs Treasures an 
+                    exceptional experience.
+                </p>
+
+                <div class="signature-container">
+                    <p>With Love,</p>
+                    <img src="signature.png" alt="JYL Signature">
+                </div>
             </section>
         </div>
 
