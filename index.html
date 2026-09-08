@@ -133,14 +133,15 @@
         }
 
         .signature-container {
-            margin-top: 40px;
-            text-align: right;
             clear: both;
+            margin-top: 30px;
+            text-align: right;
         }
 
         .signature-container p {
             text-align: right;
             margin-bottom: 5px;
+            font-size: 16px;
         }
 
         .signature-container img {
@@ -148,10 +149,68 @@
             height: auto;
         }
 
-        .about-section::after {
-            content: "";
-            display: table;
-            clear: both;
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: static;
+                max-height: none;
+            }
+
+            .hero-nav {
+                gap: 15px;
+            }
+
+            .hero-nav a {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-logo img {
+                max-width: 120px;
+            }
+
+            .hero-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-nav a {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .about-section {
+                padding: 25px;
+            }
+
+            .about-section h1 {
+                font-size: 36px;
+            }
+
+            .about-section .logo-container {
+                float: none;
+                margin-right: 0;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .about-section .logo-container img {
+                max-width: 150px;
+            }
+
+            .signature-container {
+                text-align: center;
+            }
+
+            .signature-container p {
+                text-align: center;
+            }
         }
 
         /* Right Sidebar - Blog Posts */
@@ -249,70 +308,6 @@
 
         .sidebar::-webkit-scrollbar-thumb:hover {
             background: #8b6fa8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                position: static;
-                max-height: none;
-            }
-
-            .hero-nav {
-                gap: 15px;
-            }
-
-            .hero-nav a {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-logo img {
-                max-width: 120px;
-            }
-
-            .hero-nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .hero-nav a {
-                width: 100%;
-                max-width: 200px;
-            }
-
-            .about-section {
-                padding: 25px;
-            }
-
-            .about-section h1 {
-                font-size: 36px;
-            }
-
-            .about-section .logo-container {
-                float: none;
-                margin-right: 0;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-
-            .about-section .logo-container img {
-                max-width: 150px;
-            }
-
-            .signature-container {
-                text-align: center;
-            }
-
-            .signature-container p {
-                text-align: center;
-            }
         }
     </style>
 </head>
