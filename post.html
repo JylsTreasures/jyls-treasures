@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JYLs Treasures Blog Post</title>
+    <style>
+        body {
+            background-color: #9b7fb8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            color: #9b7fb8;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #9b7fb8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div id="post-container"></div>
+        <a class="back-link" href="blog.html">← Back to Blog</a>
+    </main>
+
+    <script src="blog-posts.js"></script>
+    <script>
+        (function renderBlogPost() {
+            const postContainer = document.getElementById('post-container');
+            if (!postContainer || !Array.isArray(window.BLOG_POSTS)) {
+                return;
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const slug = params.get('slug');
+            const post = window.BLOG_POSTS.find((entry) => entry.slug === slug);
+
+            if (!post) {
+                postContainer.innerHTML = '<h1>Post not found</h1><p>The blog post you requested could not be found.</p>';
+                return;
+            }
+
+            postContainer.innerHTML = `
+                <div class="date">${post.displayDate}</div>
+                <h1>${post.title}</h1>
+                ${post.content.map((paragraph) => `<p>${paragraph}</p>`).join('')}
+            `;
+            document.title = `${post.title} | JYLs Treasures`;
+        })();
+    </script>
+</body>
+</html>

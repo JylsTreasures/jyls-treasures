@@ -322,7 +322,7 @@
         <div class="hero-nav">
             <a href="#shop">Shop</a>
             <a href="#about">About</a>
-            <a href="#blog">Blog</a>
+            <a href="blog.html">Blog</a>
             <a href="mailto:Jylstreasures@gmail.com">Contact</a>
             <a href="#cart">Cart</a>
         </div>
@@ -381,50 +381,33 @@
             <div class="blog-box">
                 <h2>Recent Posts</h2>
 
-                <article class="blog-post">
-                    <div class="date">September 4, 2024</div>
-                    <h3>Fall Fashion Trends You Need to Know</h3>
-                    <p class="excerpt">Discover the hottest fall fashion trends that are taking over this season. From oversized blazers to cozy knitwear...</p>
-                    <a href="#post1">Read More →</a>
-                </article>
-
-                <article class="blog-post">
-                    <div class="date">September 2, 2024</div>
-                    <h3>5 Wardrobe Essentials for Every Season</h3>
-                    <p class="excerpt">Build the perfect wardrobe with these 5 timeless essentials that work year-round. Quality pieces that never go out of style...</p>
-                    <a href="#post2">Read More →</a>
-                </article>
-
-                <article class="blog-post">
-                    <div class="date">August 31, 2024</div>
-                    <h3>Sustainable Fashion: Making a Difference</h3>
-                    <p class="excerpt">Learn how our sustainable fashion choices are helping the environment and supporting ethical manufacturing practices...</p>
-                    <a href="#post3">Read More →</a>
-                </article>
-
-                <article class="blog-post">
-                    <div class="date">August 28, 2024</div>
-                    <h3>New Collection Launch - Summer to Fall</h3>
-                    <p class="excerpt">Introducing our latest collection featuring transitional pieces perfect for the changing seasons. Limited stock available now...</p>
-                    <a href="#post4">Read More →</a>
-                </article>
-
-                <article class="blog-post">
-                    <div class="date">August 25, 2024</div>
-                    <h3>Styling Tips: How to Layer Like a Pro</h3>
-                    <p class="excerpt">Master the art of layering with our expert tips and tricks. Create versatile looks that work for any occasion...</p>
-                    <a href="#post5">Read More →</a>
-                </article>
-
-                <article class="blog-post">
-                    <div class="date">August 22, 2024</div>
-                    <h3>Customer Spotlight: Your Style Inspiration</h3>
-                    <p class="excerpt">Featuring our amazing customers and how they style their favorite JYLs Treasures pieces. Be inspired and share your looks...</p>
-                    <a href="#post6">Read More →</a>
-                </article>
+                <div id="recent-posts-list"></div>
+                <a href="blog.html">View all posts →</a>
             </div>
         </aside>
     </div>
 
+    <script src="blog-posts.js"></script>
+    <script>
+        (function renderRecentPosts() {
+            const recentPostsContainer = document.getElementById('recent-posts-list');
+            if (!recentPostsContainer || !Array.isArray(window.BLOG_POSTS)) {
+                return;
+            }
+
+            const recentPosts = [...window.BLOG_POSTS]
+                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .slice(0, 6);
+
+            recentPostsContainer.innerHTML = recentPosts.map((post) => `
+                <article class="blog-post">
+                    <div class="date">${post.displayDate}</div>
+                    <h3>${post.title}</h3>
+                    <p class="excerpt">${post.excerpt}</p>
+                    <a href="post.html?slug=${post.slug}">Read More →</a>
+                </article>
+            `).join('');
+        })();
+    </script>
 </body>
 </html>
