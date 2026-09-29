@@ -33,6 +33,16 @@
             margin-bottom: 15px;
         }
 
+        .post-image {
+            display: block;
+            width: 100%;
+            max-height: 420px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 0 24px;
+            background: #f3eafa;
+        }
+
         p {
             line-height: 1.7;
             margin-bottom: 12px;
@@ -70,9 +80,21 @@
                 return;
             }
 
+            const postImages = {
+                'ultimate-fit-guide-measure-vintage-used-clothing': {
+                    src: 'fit-guide.svg',
+                    alt: 'Illustration of a sweater, measuring tape, and clothing tag for a vintage clothing fit guide'
+                }
+            };
+            const image = postImages[post.slug];
+            const imageMarkup = image
+                ? `<img class="post-image" src="${image.src}" alt="${image.alt}">`
+                : '';
+
             postContainer.innerHTML = `
                 <div class="date">${post.displayDate}</div>
                 <h1>${post.title}</h1>
+                ${imageMarkup}
                 ${post.content.map((paragraph) => `<p>${paragraph}</p>`).join('')}
             `;
             document.title = `${post.title} | JYLs Treasures`;
