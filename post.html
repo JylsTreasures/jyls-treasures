@@ -55,6 +55,38 @@
             text-decoration: none;
             font-weight: 600;
         }
+
+        /* Site Footer */
+        .site-footer {
+            background: linear-gradient(135deg, #8b6fa8 0%, #9b7fb8 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .site-footer p {
+            font-size: 14px;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +94,17 @@
         <div id="post-container"></div>
         <a class="back-link" href="blog.html">← Back to Blog</a>
     </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2026 JYLs Treasures. All rights reserved.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="mailto:Jylstreasures@gmail.com">Contact</a>
+        </nav>
+    </footer>
 
     <script src="blog-posts.js"></script>
     <script>
