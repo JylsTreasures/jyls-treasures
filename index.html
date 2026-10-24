@@ -342,6 +342,193 @@
             font-size: 14px;
             margin: 0;
         }
+
+        /* Customer Feedback Section */
+        #feedback .fb-intro {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        #feedback .fb-summary {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: #f4f0f8;
+            border: 1px solid #e2d9ec;
+            border-radius: 10px;
+            padding: 22px 25px;
+            margin-bottom: 30px;
+        }
+
+        #feedback .fb-score {
+            font-size: 34px;
+            font-weight: 700;
+            color: #9b7fb8;
+            line-height: 1;
+        }
+
+        #feedback .fb-score-label {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 6px;
+        }
+
+        #feedback .fb-ratings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 30px;
+        }
+
+        #feedback .fb-rating-label {
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #888;
+        }
+
+        #feedback .fb-rating-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-top: 4px;
+        }
+
+        #feedback .fb-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        #feedback .fb-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            border: 1px solid #e6e1ee;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #feedback .fb-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        #feedback .fb-buyer {
+            font-size: 14px;
+            font-weight: 700;
+            color: #4a52c8;
+        }
+
+        #feedback .fb-meta {
+            font-size: 11px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #999;
+            margin-top: 2px;
+        }
+
+        #feedback .fb-when {
+            font-size: 12px;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        #feedback .fb-stars-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        #feedback .fb-stars {
+            color: #f5a623;
+            font-size: 15px;
+            letter-spacing: 2px;
+        }
+
+        #feedback .fb-verified {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1c7a4a;
+        }
+
+        #feedback .fb-quote {
+            flex: 1;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            text-align: left;
+            margin: 12px 0 0 0;
+        }
+
+        #feedback .fb-reply {
+            margin-top: 14px;
+            border-left: 3px solid #c9b6dd;
+            padding-left: 12px;
+        }
+
+        #feedback .fb-reply-head {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #9b7fb8;
+        }
+
+        #feedback .fb-reply p {
+            font-size: 14px;
+            font-style: italic;
+            line-height: 1.6;
+            color: #666;
+            text-align: left;
+            margin: 4px 0 0 0;
+        }
+
+        #feedback .fb-item {
+            margin-top: 14px;
+            border-top: 1px solid #e6e1ee;
+            padding-top: 12px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #777;
+        }
+
+        #feedback .fb-more {
+            display: inline-block;
+            margin-top: 25px;
+            color: #9b7fb8;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        #feedback .fb-more:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            #feedback .fb-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #feedback .fb-summary {
+                padding: 18px;
+            }
+
+            #feedback .fb-score {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -358,6 +545,7 @@
             <a href="https://www.ebay.com/str/jylstreasures" target="_blank" rel="noopener noreferrer">Shop</a>
             <a href="https://portal.jylstreasures.com" target="_blank" rel="noopener noreferrer">Portal</a>
             <a href="#about">About</a>
+            <a href="#feedback">Reviews</a>
             <a href="blog.html">Blog</a>
             <a href="mailto:Jylstreasures@gmail.com">Contact</a>
         </div>
@@ -408,6 +596,143 @@
                     <p>With Love,</p>
                     <img src="signature.png" alt="JYL Signature">
                 </div>
+            </section>
+        </div>
+
+            <section class="about-section" id="feedback">
+                <h2>What Our Customers Say</h2>
+                <p class="fb-intro">
+                    Every review below was left by a buyer on our eBay store in the last 30 days, quoted word for word,
+                    with buyer handles masked exactly the way eBay masks them.
+                </p>
+
+                <div class="fb-summary">
+                    <div>
+                        <div class="fb-score">100%</div>
+                        <div class="fb-score-label">positive feedback<br>last 12 months</div>
+                    </div>
+                    <div class="fb-ratings">
+                        <div>
+                            <div class="fb-rating-label">Accurate description</div>
+                            <div class="fb-rating-value">4.8 / 5</div>
+                        </div>
+                        <div>
+                            <div class="fb-rating-label">Reasonable shipping cost</div>
+                            <div class="fb-rating-value">4.7 / 5</div>
+                        </div>
+                        <div>
+                            <div class="fb-rating-label">Shipping speed</div>
+                            <div class="fb-rating-value">5.0 / 5</div>
+                        </div>
+                        <div>
+                            <div class="fb-rating-label">Communication</div>
+                            <div class="fb-rating-value">5.0 / 5</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fb-grid">
+                    <article class="fb-card">
+                        <div class="fb-card-top">
+                            <div>
+                                <div class="fb-buyer">Buyer: i***i (1162)</div>
+                                <div class="fb-meta">Feedback left by buyer</div>
+                            </div>
+                            <div class="fb-when">Past month</div>
+                        </div>
+                        <div class="fb-stars-row">
+                            <span class="fb-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="fb-verified">✓ Verified purchase</span>
+                        </div>
+                        <p class="fb-quote">These are best jeans I ever had! They fit perfectly, were incredibly inexpensive, shipped amazingly fast and wrapped like they cost a fortune! The seller was also super-polite and completely attentive to my needs; I will definitely buy from this seller again!!!</p>
+                        <div class="fb-reply">
+                            <div class="fb-reply-head">Reply from: martynsmommy</div>
+                            <p>Thank you for shopping my small store multiple times, and for the great comment! I strive to make sure my customers get their money worth in these trying times.</p>
+                        </div>
+                        <div class="fb-item">Levis 511 Mens Jeans 34x30 Slim Fit Straight Stretch Blank Red Tab Dark Wash · $10.36</div>
+                    </article>
+                    <article class="fb-card">
+                        <div class="fb-card-top">
+                            <div>
+                                <div class="fb-buyer">Buyer: i***i (1162)</div>
+                                <div class="fb-meta">Feedback left by buyer</div>
+                            </div>
+                            <div class="fb-when">Past month</div>
+                        </div>
+                        <div class="fb-stars-row">
+                            <span class="fb-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="fb-verified">✓ Verified purchase</span>
+                        </div>
+                        <p class="fb-quote">This beautiful shirt is my second purchase from this seller. The price was great, it fits perfectly and has a gentle scent. It was also packed well, shipped super-fast and the seller was very polite in communication; a stellar Ebay seller!!!</p>
+                        <div class="fb-reply">
+                            <div class="fb-reply-head">Reply from: martynsmommy</div>
+                            <p>Thank you for taking the time to create such a thoughtful feedback!</p>
+                        </div>
+                        <div class="fb-item">J Crew Mens Secret Wash Shirt Medium M Red Plaid Check Button Down Classic Fit · $11.96</div>
+                    </article>
+                    <article class="fb-card">
+                        <div class="fb-card-top">
+                            <div>
+                                <div class="fb-buyer">Buyer: 8***8 (9)</div>
+                                <div class="fb-meta">Feedback left by buyer</div>
+                            </div>
+                            <div class="fb-when">Past month</div>
+                        </div>
+                        <div class="fb-stars-row">
+                            <span class="fb-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="fb-verified">✓ Verified purchase</span>
+                        </div>
+                        <p class="fb-quote">Shipping was fast. Received as shown. Well packaged. Great value. Very good communication as well.</p>
+                        <div class="fb-item">Levi's 501 Original Fit Jeans Mens 36x31 Dark Wash Blue Straight Leg Button Fly · $17.95</div>
+                    </article>
+                    <article class="fb-card">
+                        <div class="fb-card-top">
+                            <div>
+                                <div class="fb-buyer">Buyer: i***_ (57)</div>
+                                <div class="fb-meta">Feedback left by buyer</div>
+                            </div>
+                            <div class="fb-when">Past month</div>
+                        </div>
+                        <div class="fb-stars-row">
+                            <span class="fb-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="fb-verified">✓ Verified purchase</span>
+                        </div>
+                        <p class="fb-quote">Jeans exactly as described, unfortunately too big for me. Return was perfect and easy!</p>
+                        <div class="fb-item">Madewell Roadtripper Stovepipe Jeans Size 24 Medium Wash Stretch Blue High Rise · $9.00</div>
+                    </article>
+                    <article class="fb-card">
+                        <div class="fb-card-top">
+                            <div>
+                                <div class="fb-buyer">Buyer: m***l (3097)</div>
+                                <div class="fb-meta">Feedback left by buyer</div>
+                            </div>
+                            <div class="fb-when">Past month</div>
+                        </div>
+                        <div class="fb-stars-row">
+                            <span class="fb-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="fb-verified">✓ Verified purchase</span>
+                        </div>
+                        <p class="fb-quote">Super fast shipping.Thank you for a flawlwss transaction. A+++ Transaction.</p>
+                        <div class="fb-item">Rowdy Gentleman Mens Medium M Blue Fleece Vest Full Zip Mock Neck Media Pocket · $9.03</div>
+                    </article>
+                    <article class="fb-card">
+                        <div class="fb-card-top">
+                            <div>
+                                <div class="fb-buyer">Buyer: a***2 (75)</div>
+                                <div class="fb-meta">Feedback left by buyer</div>
+                            </div>
+                            <div class="fb-when">Past month</div>
+                        </div>
+                        <div class="fb-stars-row">
+                            <span class="fb-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span>
+                            <span class="fb-verified">✓ Verified purchase</span>
+                        </div>
+                        <p class="fb-quote">Can't go wrong with this brand arrived on time and looks as described ty</p>
+                        <div class="fb-item">Banana Republic Flare Jeans Womens 27 Low Rise Blue Medium Wash Stretch Denim · $7.23</div>
+                    </article>
+                </div>
+
+                <a class="fb-more" href="https://www.ebay.com/fdbk/feedback_profile/martynsmommy?filter=feedback_page%3ARECEIVED_AS_SELLER&amp;sort=RELEVANCEV2" target="_blank" rel="noopener noreferrer">Read all our eBay feedback →</a>
             </section>
         </div>
 
